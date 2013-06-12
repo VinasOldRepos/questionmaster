@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>The Question Master</title>
+		<!-- JS -->
+		<?php echo $GLOBALS['general_js']; ?>
+		<?php echo $GLOBALS['this_js']; ?>
+		<!-- CSS -->
+		<?php echo $GLOBALS['general_css']; ?>
+		<?php echo $GLOBALS['this_css']; ?>
+	</header>
+	<body class="body" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+		<div class="container">
+			<div class="main_menu">
+				<?php \SaSeed\View::render("partial_mainMenu"); ?>
+			</div>
+			<br /><br /><br /><br /><br /><br /><br />
+			<div class="content">
+				<div class="search_box">
+					<label for="branch">Search:</label> <input type="text" name="str_search" id="str_search" maxlength="100" class="large_text_input" />
+				</div>
+				<div class="results" id="results">
+					<div class="navigation_box" id="up_nav_box">
+						<?php echo $pager; ?>
+					</div>
+					<div class="result_box" id="result_box">
+						<?php echo $return; ?>
+					</div>
+					<div class="navigation_box" id="down_nav_box">
+						<?php echo $pager; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

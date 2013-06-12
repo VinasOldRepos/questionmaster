@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>The Question Master</title>
+		<!-- JS -->
+		<?php echo $GLOBALS['general_js']; ?>
+		<?php echo $GLOBALS['this_js']; ?>
+		<!-- CSS -->
+		<?php echo $GLOBALS['general_css']; ?>
+		<?php echo $GLOBALS['this_css']; ?>
+	</header>
+	<body class="details_body" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+		<div class="details_container">
+			<div class="content">
+				<div style="float: left; width: 750px;">
+					<div style="float: left; text-align: left; width: 315px;">
+						<div class="details_title" id="details_title">Question</div>
+						<div class="text_edit edit_label" id="details_question" key="tx_question"><?php echo $question; ?></div>
+						<div class="details_edit_question" id="details_edit_question" style="display: none;"><textarea name="tx_question" id="tx_question" class="textarea_edit"><?php echo $question; ?></textarea></div>
+						<div class="updt_question" id="updt_question"><img src="/questionmaster/Application/View/img/bt_ok.png" width="41" height="41" border="0" /></div>
+					</div>
+					<div style="float: right; text-align: left; width: 315px;">
+						<div class="details_title" id="details_title">Tutor</div>
+						<div class="text_edit edit_label" id="details_tutor" key="tx_tutor"><?php echo $tutor; ?></div>
+						<div class="details_edit_tutor" id="details_edit_tutor" style="display: none;"><textarea name="tx_question" id="tx_tutor" class="textarea_edit"><?php echo $tutor; ?></textarea></div>
+						<div class="updt_tutor" id="updt_tutor"><img src="/questionmaster/Application/View/img/bt_ok.png" width="41" height="41" border="0" /></div>
+					</div>
+					<div class="delete_branch" id="delete_branch"><img src="/questionmaster/Application/View/img/bt_trashcan.png" width="20" height="20" border="0" />&nbsp;Delete</div>
+					<div class="question_status" id="question_status">
+						<select name="status" id="status" class="small_text_input">
+						<?php echo $status; ?>
+						</select>
+					</div>
+				</div>
+				<div style="margin-top: 130px;"></div>
+				<input type="hidden" name="parent_id" id="parent_id" value="<?php echo $id_question; ?>" />
+				<input type="hidden" name="courses_arr" id="courses_arr" value="<?php echo $courses_arr; ?>" />
+				<!-- div class="search_box">
+					<label for="str_search" style="width: 20%;">Search:</label> <input type="text" name="str_search" id="str_search" maxlength="100" class="large_text_input_dark" />
+				</div -->
+				<div>
+					<div>
+						<div class="results" id="results">
+							<div class="navigation_box" id="up_nav_box">
+								<?php echo $pager; ?>
+							</div>
+							<div class="details_result_box" id="result_box">
+								<?php echo $return; ?>
+							</div>
+							<div class="navigation_box" id="down_nav_box">
+								<?php echo $pager; ?>
+							</div>
+						</div>
+					</div>
+					<div class="courses_container">
+						<span class="title_03">Courses:</span><br />
+						<br />
+						<div id="courses">
+							<?php echo $courses; ?>
+						</div>
+						<!-- br />
+						<a href="#" class="text_01" id="add_courses">(Add courses)</a -->
+					</div>
+				</div>
+				<div class="add_question">
+					<div style="float: left;">
+						Add new answer: <input type="text" name="new_answer" id="new_answer" maxlength="200" class="thi_text_input" />
+					</div>
+					<div style="float: right;">
+						<select name="correct" id="correct" class="tiny_text_input">
+							<option value="1">Correct</option>
+							<option value="0" selected="selected">Incorrect</option>
+						</select>
+						<div class="new_answer"><img src="/questionmaster/Application/View/img/bt_add.png" width="20" height="20" border="0" /></div>
+					</div>
+				</div>
+				<div class="add_course">
+					<div style="float: left;">
+						Add new course: 
+						<select name="id_course_add" id="id_course_add" class="thi_text_input" style="margin-left: 3px; width: 363px;">
+							<?php echo $combo_courses; ?>
+						</select>
+					</div>
+					<div style="float: right;">
+						<div class="new_course"><img src="/questionmaster/Application/View/img/bt_add.png" width="20" height="20" border="0" /></div>
+					</div>
+				</div>
+				<div class="answer_details" id="answer_details"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+.formInsertCourse {
+	width:			400px;
+	position:		absolute;
+	margin-left:	100px;
+}
+
+.form_buttons {
+	margin-left:	auto;
+	margin-right:	auto;
+	margin-top:		50px;
+	width:			100px;
+}
+
+.bt_cancel {
+	float:	left;
+}
+
+.bt_ok {
+	float:	right;
+}
+
+.result_id {
+	width:		50px;
+	text-align:	center;
+}
+
+.result_branch {
+	width:		145px;
+	text-align:	left;
+}
+
+.result_vc_field {
+	width:		170px;
+	text-align:	left;
+}
+
+.result_course {
+	width:		297px;
+	text-align:	left;
+}
+
+.result_level {
+	width:		50px;
+	text-align:	center;
+}
+
+.result_active {
+	width:	60px;
+}
+
+.details_body {
+	margin:				0px;
+	border:				0px;
+	background-color:	#496F4E;
+	text-align:	 		center;
+	font-family:		Arial, Helvetica, sans-serif;
+	font-size:			12px;
+	color:				#FFF;
+}
+
+.details_container {
+	margin-left:	auto;
+	margin-right:	auto;
+	width:			800px;
+	height:			500px;
+	text-align:	 	center;
+}
+
+.delete_course {
+	position:		absolute;
+	float:			left;
+	margin-top:		260px;
+	color: 			#FB6F6F;
+}
+
+.delete_course:hover {
+	cursor:	pointer;
+}
+
+.add_questions {
+	position:		absolute;
+	float:			right;
+	margin-top:		260px;
+	margin-left:	360px;
+	width:			200px;
+	text-decoration:	none;
+}
+
+.add_questions:hover {
+	cursor:	pointer;
+}

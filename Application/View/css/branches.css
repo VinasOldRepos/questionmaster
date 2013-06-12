@@ -1,0 +1,188 @@
+.formInsertBranch {
+	width:			400px;
+	position:		absolute;
+	margin-left:	100px;
+}
+
+.form_holder {
+	margin-left:	150px;
+	width:			400px;
+	position:		absolute;
+	text-align:		left;
+	float:			left;
+}
+
+.add_fields {
+	margin-left:	298px;
+	margin-top:		10px;
+}
+
+.add_fields:hover {
+	cursor:			pointer;
+}
+
+.list_fields {
+	margin-left:	535px;
+	width:			350px;
+	position:		absolute;
+	text-align:		left;
+}
+
+.form_buttons {
+	margin-left:	auto;
+	margin-top:		140px;
+	width:			100px;
+}
+
+.bt_cancel {
+	float:	left;
+}
+
+.bt_ok {
+	float:	right;
+}
+
+.result_id {
+	width:		50px;
+	text-align:	center;
+}
+
+.result_courses {
+	width:		70px;
+	text-align:	center;
+}
+
+.result_branch {
+	width:		250px;
+	text-align:	left;
+}
+
+.result_vc_field {
+	width:		250px;
+	text-align:	left;
+}
+
+
+
+/* *******************
+   ***** DETAILS *****
+   ******************* */
+
+.details_body {
+	margin:				0px;
+	border:				0px;
+	background-color:	#496F4E;
+	text-align:	 		center;
+	font-family:		Arial, Helvetica, sans-serif;
+	font-size:			12px;
+	color:				#FFF;
+}
+
+.details_container {
+	margin-left:	auto;
+	margin-right:	auto;
+	width:			800px;
+	height:			500px;
+	text-align:	 	center;
+}
+
+.details_title {
+	position:		absolute;
+	float:			left;
+	margin-left:	20px;
+	font-size:		60px;
+}
+
+.details_result_box {
+	margin-left:		auto;
+	margin-right:		auto;
+	margin-top:			10px;
+	margin-bottom:		10px;
+	padding-bottom:		2px;
+	width:				410px;
+	min-height:			50px;
+	position:			relative;
+}
+
+.result_active {
+	width:	44px;
+}
+
+.field_details {
+	margin-left:	auto;
+	margin-right:	auto;
+	width:			700px;
+	padding:		3px;
+}
+
+.details_text {
+	width:			320px;
+	margin-left:	20px;
+	float:			left;
+	text-align:		left;
+}
+
+.details_graph {
+	width:				320px;
+	max-height:			145px;
+	padding:			10px;
+	margin-top:			10px;
+	margin-right:		20px;
+	float:				right;
+	background-color:	#C4C4C4;
+	color:				#000;
+}
+
+.vc_branch {
+	float:				left;
+	margin-left:		20px;
+	font-size:			60px;
+	color:				#FFF;
+	border:				0px;
+	background-color:	#496F4E;
+}
+
+.vc_field {
+	float:				left;
+	font-size:			22px;
+	color:				#FFF;
+	border:				0px;
+	background-color:	#496F4E;
+	padding-top:		6px;
+}
+
+.delete_branch {
+	position:		absolute;
+	float:			left;
+	margin-left:	25px;
+	margin-top:		65px;
+	color: 			#FB6F6F;
+}
+
+.delete_branch:hover {
+	cursor:	pointer;
+}
+
+.delete_field {
+	position:		absolute;
+	float:			left;
+	margin-left:	25px;
+	margin-top:		85px;
+	color: 			#FB6F6F;
+}
+
+.delete_field:hover {
+	cursor:	pointer;
+}
+
+.add_field {
+	padding:			5px;
+	padding-bottom:		8px;
+	text-align:			center;
+	margin-top:			20px;
+	margin-left:		auto;
+	margin-right:		auto;
+	margin-bottom:		10px;
+	background-color:	#80A184;
+	width:				340px;
+}

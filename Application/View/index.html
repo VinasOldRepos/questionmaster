@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>The Question Master</title>
+		<!-- JS -->
+		<?php echo $GLOBALS['general_js']; ?>
+		<?php echo $GLOBALS['this_js']; ?>
+		<!-- CSS -->
+		<?php echo $GLOBALS['general_css']; ?>
+		<?php echo $GLOBALS['this_css']; ?>
+	</header>
+	<body class="body" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+		<div class="container">
+			<div class="main_menu">
+				<?php \SaSeed\View::render("partial_mainMenu"); ?>
+			</div>
+			<br /><br /><br /><br /><br /><br /><br />
+			<div class="content">
+				CONTENT
+			</div>
+		</div>
+	</body>
+</html>

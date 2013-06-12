@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>The Question Master</title>
+		<!-- JS -->
+		<?php echo $GLOBALS['general_js']; ?>
+		<?php echo $GLOBALS['this_js']; ?>
+		<!-- CSS -->
+		<?php echo $GLOBALS['general_css']; ?>
+		<?php echo $GLOBALS['this_css']; ?>
+	</header>
+	<body class="details_body" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+		<div class="details_container">
+			<div class="content">
+				<br />
+				<span class="title_01" id="main_title">Edit User</span>
+				<br /><br />
+				<div class="formInsertCourse" id="formInsertCourse">
+					<fieldset style="width: 500px;">
+						<form class="form">
+							<input type="hidden" id="id_user" name="id_user" value="<?php echo $id_user; ?>" />
+							<label for="id_branch">Profile:</label>
+							<select name="id_profile" id="id_profile" class="sec_text_input" style="width: 206px;" />
+								<?php echo $profiles; ?>
+							</select>
+							<label for="course">User:</label> <input type="text" name="vc_user" id="vc_user" maxlength="100" class="sec_text_input" value="<?php echo $vc_user; ?>" />
+							<label for="course">Email:</label> <input type="text" name="vc_email" id="vc_email" maxlength="100" class="sec_text_input" value="<?php echo $vc_email; ?>" />
+							<br /><br />
+							<label for="course">New Password:</label> <input type="password" name="password1" id="password1" maxlength="100" class="sec_text_input" value="" />
+							<label for="course">Confirm New Password:</label> <input type="password" name="password2" id="password2" maxlength="100" class="sec_text_input" value="" />
+							<div class="form_buttons">
+								<div class="bt_cancel">
+									<img class="form_button" src="/questionmaster/Application/View/img/bt_cancel.png" width="41" height="41" border="0" /><br />
+									<span class="text_02">Cancel</span>
+								</div>
+								<div class="bt_ok updt_user">
+									<img class="form_button" src="/questionmaster/Application/View/img/bt_ok.png" width="41" height="41" border="0" /><br />
+									<span class="text_02">OK</span>
+								</div>
+							</div>
+						</form>
+					</fieldset>
+					<div class="delete_user" id="delete_user"><img src="/questionmaster/Application/View/img/bt_trashcan.png" width="20" height="20" border="0" />&nbsp;Delete</div>
+				</div>
+				<div class="message_area" id="message_area" style="display: none;"></div>
+			</div>
+		</div>
+	</body>
+</html>

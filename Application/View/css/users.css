@@ -1,0 +1,74 @@
+.formInsertCourse {
+	width:			400px;
+	position:		absolute;
+	margin-left:	100px;
+}
+
+.bt_cancel {
+	float:	left;
+}
+
+.bt_ok {
+	float:	right;
+}
+
+.form_buttons {
+	margin-left:	230px;
+	margin-top:		20px;
+	width:			110px;
+}
+
+.result_id {
+	width:		50px;
+	text-align:	center;
+}
+
+.result_user {
+	width:		200px;
+	text-align:	left;
+}
+
+.result_email {
+	width:		300px;
+	text-align:	left;
+}
+
+.result_profile {
+	width:		130px;
+	text-align:	left;
+}
+
+.result_active {
+	width:		80px;
+	text-align:	center;
+}
+
+.details_body {
+	margin:				0px;
+	border:				0px;
+	background-color:	#496F4E;
+	text-align:	 		center;
+	font-family:		Arial, Helvetica, sans-serif;
+	font-size:			12px;
+	color:				#FFF;
+}
+
+.details_container {
+	margin-left:	auto;
+	margin-right:	auto;
+	width:			800px;
+	height:			500px;
+	text-align:	 	center;
+}
+
+.delete_user {
+	position:		absolute;
+	float:			left;
+	margin-top:		200px;
+	margin-left:	90px;
+	color: 			#FB6F6F;
+}
+
+.delete_user:hover {
+	cursor:	pointer;
+}

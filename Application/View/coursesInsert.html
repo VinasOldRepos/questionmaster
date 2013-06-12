@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>The Question Master</title>
+		<!-- JS -->
+		<?php echo $GLOBALS['general_js']; ?>
+		<?php echo $GLOBALS['this_js']; ?>
+		<!-- CSS -->
+		<?php echo $GLOBALS['general_css']; ?>
+		<?php echo $GLOBALS['this_css']; ?>
+	</header>
+	<body class="body" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+		<div class="container">
+			<div class="main_menu">
+			<?php \SaSeed\View::render("partial_mainMenu"); ?>
+			</div>
+			<br /><br /><br /><br /><br /><br /><br />
+			<div class="content">
+				<br />
+				<span class="title_01" id="main_title">New Course</span>
+				<br /><br />
+				<div class="formInsertCourse" id="formInsertCourse">
+					<fieldset style="width: 500px;">
+						<form class="form">
+							<label for="id_branch">Branch:</label>
+							<select name="id_branch" id="id_branch" class="main_text_input" style="width: 206px;" />
+								<option value="0">-</option>
+								<?php echo $branches; ?>
+							</select>
+							<label for="id_field">Field:</label>
+							<select name="id_field" id="id_field" class="main_text_input" style="width: 206px;" />
+								<option value="0">-</option>
+							</select>
+							<label for="course">Course Name:</label> <input type="text" name="course" id="course" maxlength="100" class="main_text_input" />
+							<label for="level">Course Level:</label> <input type="text" name="level" id="level" maxlength="2" class="main_text_input" />
+							<label for="level">Status:</label>
+							<select name="status" id="status" class="main_text_input" style="width: 206px;" />
+								<option value="1" selected="selected">Active</option>
+								<option value="0">Inactive</option>
+							</select>
+							<div class="form_buttons">
+								<div class="bt_cancel">
+									<img class="form_button" src="/questionmaster/Application/View/img/bt_cancel.png" width="41" height="41" border="0" /><br />
+									<span class="text_02">Cancel</span>
+								</div>
+								<div class="bt_ok new_course">
+									<img class="form_button" src="/questionmaster/Application/View/img/bt_ok.png" width="41" height="41" border="0" /><br />
+									<span class="text_02">OK</span>
+								</div>
+							</div>
+						</form>
+					</fieldset>
+				</div>
+				<div class="message_area" id="message_area" style="display: none;"></div>
+			</div>
+		</div>
+	</body>
+</html>

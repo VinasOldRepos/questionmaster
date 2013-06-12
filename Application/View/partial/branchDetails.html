@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>The Question Master</title>
+		<!-- JS -->
+		<?php echo $GLOBALS['general_js']; ?>
+		<?php echo $GLOBALS['this_js']; ?>
+		<!-- CSS -->
+		<?php echo $GLOBALS['general_css']; ?>
+		<?php echo $GLOBALS['this_css']; ?>
+	</header>
+	<body class="details_body" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+		<div class="details_container">
+			<div class="content">
+				<div class="details_title edit_label" key="vc_branch" id="details_title"><?php echo $branch; ?></div>
+				<div class="details_edit_title" id="details_edit_title" style="display: none;"><input type="text" name="vc_branch" id="vc_branch" class="vc_branch" value="<?php echo $branch; ?>" /></div>
+				<div class="delete_branch" id="delete_branch"><img src="/questionmaster/Application/View/img/bt_trashcan.png" width="20" height="20" border="0" />&nbsp;Delete</div>
+				<br /><br /><br /><br /><br />
+				<div class="search_box">
+					<input type="hidden" name="parent_id" id="parent_id" value="<?php echo $id_branch; ?>" />
+					<label for="branch" style="width: 20%;">Search:</label> <input type="text" name="str_search" id="str_search" maxlength="100" class="large_text_input_dark" />
+				</div>
+				<div class="results" id="results">
+					<div class="navigation_box" id="up_nav_box">
+						<?php echo $pager; ?>
+					</div>
+					<div class="details_result_box" id="result_box">
+						<?php echo $return; ?>
+					</div>
+					<div class="navigation_box" id="down_nav_box">
+						<?php echo $pager; ?>
+					</div>
+				</div>
+				<div class="add_field">
+					Add new field: <input type="text" name="new_field" id="new_field" maxlength="100" class="sec_text_input" />
+				</div>
+				<div class="field_details" id="field_details">
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>
