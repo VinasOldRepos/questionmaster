@@ -10,6 +10,15 @@ $('document').ready(function() {
 	});
 
 	// What happens when user click on database result line
+	$(".show_answer_form_course").live("click", function() {
+		$key		= $(this).attr('key');
+		if ($key) {
+			$(location).attr('href', '/questionmaster/Questions/details/'+$key);
+		}
+		return false;
+	});
+
+	// What happens when user click on database result line
 	$(".details_return_row").live("click", function() {
 		document.body.style.cursor	= 'wait';
 		$(".details_return_row_this").attr('class', 'details_return_row');
@@ -402,6 +411,7 @@ $('document').ready(function() {
 	// What happens when user submit new Question
 	$(".new_question").live("click", function() {
 		$courses		= $("#courses_arr").val();
+		$insert_type	= $("#insert_type").val();
 		$id_status		= $("#id_status").val();
 		$tx_question	= $("#tx_question").val().trim();
 		$tx_tutor		= $("#tx_tutor").val().trim();
@@ -424,7 +434,11 @@ $('document').ready(function() {
 					//$("#courses").html('');
 					$("#tx_question").val('');
 					$("#tx_tutor").val('');
-					contentShowData("#message_area", '<span class="title_01">New Question succefully created!!<br /><br /><a href="#" class="text_01 show_answer_form" key="'+$return+'"><u>Add Answers to this Question</u></a><br /><a href="#" class="text_01 show_form"><u>Add another Question</u></a>');
+					if ($insert_type == 'repeat') {
+						contentShowData("#message_area", '<span class="title_01">New Question succefully created!!<br /><br /><a href="#" class="text_01 show_answer_form_course" key="'+$return+'"><u>Add Answers to this Question</u></a><br /><a href="#" class="text_01 show_form"><u>Add another Question to this Course.</u></a>');
+					} else {
+						contentShowData("#message_area", '<span class="title_01">New Question succefully created!!<br /><br /><a href="#" class="text_01 show_answer_form" key="'+$return+'"><u>Add Answers to this Question</u></a><br /><a href="#" class="text_01 show_form"><u>Add another Question</u></a>');
+					}
 				} else {
 					
 				}

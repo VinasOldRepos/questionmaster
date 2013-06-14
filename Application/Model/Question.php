@@ -145,6 +145,14 @@
 			return $return;
 		}
 
+		public function comboSelect($value = false, $caption = false) {
+			$return	= false;
+			if (($value) && ($caption)) {
+				$return	.= '<option value="'.$value.'" selected="selected">'.$caption.'</option>'.PHP_EOL;
+			}
+			return $return;
+		}
+
 		public function statusCombo($all_status = false, $id_status = false) {
 			$return	= false;
 			if ($all_status) {
@@ -194,7 +202,7 @@
 			$return			= ' ';
 			if ($courses) {
 				foreach ($courses as $course) {
-					$return	.= '<div id="'.$course['id_course'].'">&bull;&nbsp;'.$course['vc_course'].' (<a href="#" class="text_01 remove_field_det" key="'.$course['id_course'].'">X</a>)</div>';
+					$return	.= '<div id="'.$course['id_course'].'">&bull;&nbsp;<a href="#" class="text_01">'.$course['vc_course'].'</a> (<a href="#" class="text_01 remove_field_det" key="'.$course['id_course'].'">X</a>)</div>';
 				}
 			}
 			return $return;

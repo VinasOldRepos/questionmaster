@@ -41,6 +41,28 @@
 		}
 
 		/*
+		Get Course by Id - getCourseById($id)
+			@param integer	- Question Id
+			@return format	- Mixed array
+		*/
+		public function getCourseById($id = false) {
+			// Database Connection
+			$db					= $GLOBALS['db'];
+			// Initialize variables
+			$return				= false;
+			// if id was sent
+			if ($id) {
+				// Query set up
+				$table			= 'tb_course';
+				$select_what	= '*';
+				$conditions		= "id = '{$id}'";
+				$return			= $db->getRow($table, $conditions, $select_what);
+			}
+			// Return
+			return $return;
+		}
+
+		/*
 		Get All Question Info by Id - getAllInfoById($id)
 			@param integer	- Question Id
 			@return format	- Mixed array
@@ -271,8 +293,8 @@
 			// if email was sent
 			if ($id) {
 				// Query set up
-				$table			= 'tb_course AS c JOIN tb_field AS f ON c.id_field = f.id';
-				$select_what	= 'f.id AS id_field, f.id_branch';
+				$table			= 'tb_course AS c JOIN tb_field AS f ON c.id_field = f.id JOIN tb_branch AS b ON f.id_branch = b.id';
+				$select_what	= 'f.id AS id_field, f.vc_field , b.id AS id_branch, b.vc_branch';
 				$conditions		= "c.id = '{$id}'";
 				$return			= $db->getRow($table, $conditions, $select_what);
 			}

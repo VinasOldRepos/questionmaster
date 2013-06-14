@@ -144,6 +144,17 @@
 	color:				#FFF;
 }
 
+.sec_textarea_edit {
+	margin-left:		50px;
+	width:				263px;
+	height:				77px;
+	border-width:		0px;
+	background-color:	#032407;
+	font-family:		Arial, Helvetica, sans-serif;
+	font-size:			12px;
+	color:				#FFF;
+}
+
 .updt_question {
 	position:		absolute;
 	margin-left:	310px;

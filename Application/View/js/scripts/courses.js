@@ -63,7 +63,9 @@ $('document').ready(function() {
 
 	$("#add_questions").live("click", function() {
 		$id_course	= $("#id_course").val();
-		$(location).attr('href', '/questionmaster/Questions/insert/'+$id_course);
+		//parent.$.fancybox.close();
+		$(location).attr('href', '/questionmaster/Questions/insertCourse/'+$id_course);
+		return false;
 	});
 
 	// What happens when user submit new branch

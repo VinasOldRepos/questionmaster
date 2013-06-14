@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>The Question Master</title>
+		<!-- JS -->
+		<?php echo $GLOBALS['general_js']; ?>
+		<?php echo $GLOBALS['this_js']; ?>
+		<!-- CSS -->
+		<?php echo $GLOBALS['general_css']; ?>
+		<?php echo $GLOBALS['this_css']; ?>
+	</header>
+	<body class="details_body" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+		<div class="details_container">
+			<div class="content">
+				<br />
+				<span class="title_01" id="main_title">Add Question to Course</span>
+				<br /><br />
+				<div class="formInsertCourse" id="formInsertCourse">
+					<fieldset style="width: 500px;">
+						<form class="form">
+							<input type="hidden" name="courses_arr" id="courses_arr" value="<?php echo $id_course; ?>" />
+							<input type="hidden" name="insert_type" id="insert_type" value="repeat" />
+							<div class="list_fields step" id="form_step_2">
+								<span class="title_03">Courses:</span><br />
+								<br />
+								<div id="courses">
+								</div>
+							</div>
+							<label for="id_branch">Branch:</label>
+							<select name="id_branch" id="id_branch" class="sec_text_input" style="width: 206px;" />
+								<?php echo $branches; ?>
+							</select>
+							<label for="id_field">Field:</label>
+							<select name="id_field" id="id_field" class="sec_text_input" style="width: 206px;" />
+								<?php echo $fields; ?>
+							</select>
+							<label for="id_course">Course:</label>
+							<select name="id_course" id="id_course" class="sec_text_input" style="width: 206px;" />
+								<?php echo $courses; ?>
+							</select>
+							<br /><br /><br />
+							<label for="level">Status:</label>
+							<select name="id_status" id="id_status" class="sec_text_input" style="width: 206px;" />
+								<?php echo $status; ?>
+							</select>
+							<div style="height: 15px;"></div>
+							<label for="tx_question">Question:</label> <textarea name="tx_question" id="tx_question" class="sec_textarea_edit"></textarea>
+							<label for="level">Tutor text:</label> <textarea name="tx_tutor" id="tx_tutor" class="sec_textarea_edit"></textarea>
+							<div class="form_buttons">
+								<div class="bt_cancel">
+									<img class="form_button" src="/questionmaster/Application/View/img/bt_cancel.png" width="41" height="41" border="0" /><br />
+									<span class="text_02">Cancel</span>
+								</div>
+								<div class="bt_ok">
+									<img class="form_button new_question" src="/questionmaster/Application/View/img/bt_ok.png" width="41" height="41" border="0" /><br />
+									<span class="text_02">OK</span>
+								</div>
+							</div>
+						</form>
+					</fieldset>
+				</div>
+				<div class="message_area" id="message_area" style="display: none;"></div>
+			</div>
+		</div>
+	</body>
+</html>

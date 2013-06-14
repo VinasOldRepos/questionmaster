@@ -91,29 +91,19 @@
  		}
 
 		/*
-		Renders Inser Question page - insert()
+		Renders Insert Question page - insert()
 			@return format	- print
 		*/
 		public function insert() {
 			// Declare classes
 			$RepQuestion	= new RepQuestion();
 			$ModQuestion	= new ModQuestion();
-			// Initialize variables
-			$id_course		= (isset($GLOBALS['params'][1])) ? trim($GLOBALS['params'][1]) : false;
+			// Define sub menu selection
+			$GLOBALS['menu']['questions']['opt1_css'] = 'details_item_on';
 			// Get All Statuses
 			$status			= $RepQuestion->getAllStatus();
 			// Get All Branches
 			$branches		= $RepQuestion->getAllBranches();
-			// If Course was informed
-			if ($id_course) {
-				// Get selected branch and field
-				$res		= $RepQuestion->getBranchFieldByCourseId($id_course);
-				// If There was data
-				if ($res) {
-					$id_branch	= $res['id_branch'];
-					$id_field	= $res['id_field'];
-				}
-			}
 			// Model Results
 			$status			= $ModQuestion->statusCombo($status);
 			$branches		= $ModQuestion->branchesCombo($branches);
@@ -122,6 +112,45 @@
 			View::set('branches', $branches);
 			// Render View
 			View::render('questionsInsert');
+ 		}
+
+		/*
+		Renders Insert Question page with pre selected course - insertCourse()
+			@return format	- print
+		*/
+		public function insertCourse() {
+			// Declare classes
+			$RepQuestion		= new RepQuestion();
+			$ModQuestion		= new ModQuestion();
+			// Initialize variables
+			$id_course			= (isset($GLOBALS['params'][1])) ? trim($GLOBALS['params'][1]) : false;
+			// If Course was informed
+			if ($id_course) {
+				// Get Course Info Statuses
+				$course			= $RepQuestion->getCourseById($id_course);
+				// Get All Statuses
+				$status			= $RepQuestion->getAllStatus();
+				// Get selected branch and field
+				$res			= $RepQuestion->getBranchFieldByCourseId($id_course);
+				// If There was data
+				if ($res) {
+					$id_branch	= $res['id_branch'];
+					$id_field	= $res['id_field'];
+					// Model Results
+					$status		= $ModQuestion->statusCombo($status);
+					$branches	= $ModQuestion->comboSelect($res['id_branch'], $res['vc_branch']);
+					$fields		= $ModQuestion->comboSelect($res['id_field'], $res['vc_field']);
+					$courses	= $ModQuestion->comboSelect($course['id'], $course['vc_course']);
+				}
+				// Prepare values to be sent
+				View::set('status', $status);
+				View::set('branches', $branches);
+				View::set('fields', $fields);
+				View::set('courses', $courses);
+				View::set('id_course', $id_course);
+				// Render View
+				View::render('partial_questionsInsertCourse');
+			}
  		}
 
 		/*
