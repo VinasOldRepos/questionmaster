@@ -53,6 +53,8 @@ $('document').ready(function() {
 					$("#message_area").hide();
 					$("#main_title").hide();
 					contentShowData("#message_area", '<span class="title_01">New Course succefully created!!<br /><br /><a href="#" class="text_01 show_form"><u>Add another Course</u></a>');
+				} else {
+					alert("Sorry,\n\nWe were unable to create this Course.\n\nError: "+$return);
 				}
 			});
 		} else {
@@ -91,7 +93,7 @@ $('document').ready(function() {
 					$("#main_title").hide();
 					contentShowData("#message_area", '<span class="title_01">This Course was succefully updated!!<br /><br /><a href="#" class="text_01 close_modal"><u>Click here to close</u></a>');
 				} else {
-					alert("Please,\n\ncheck if all required information was provided.");
+					alert("Sorry,\n\nWe were unable to update this Course.\n\nError: "+$return);
 				}
 				document.body.style.cursor	= 'default';
 			});

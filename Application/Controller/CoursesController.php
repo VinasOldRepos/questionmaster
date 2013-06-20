@@ -204,9 +204,9 @@
 			$id_field			= (isset($_POST['id_field'])) ? trim($_POST['id_field']) :  false;
 			$vc_course			= (isset($_POST['vc_course'])) ? trim($_POST['vc_course']) :  false;
 			$level				= (isset($_POST['level'])) ? trim($_POST['level']) :  false;
-			$status				= (isset($_POST['status'])) ? trim($_POST['status']) :  0;
+			$status				= (isset($_POST['status'])) ? trim($_POST['status']) :  false;
 			// If data was sent
-			if (($id_field) && ($vc_course) && ($level) && ($status)) {
+			if (($id_field !== false) && ($vc_course !== false) && ($level !== false) && ($status !== false)) {
 				// Insert Course into database
 				$id_course		= $RepCourse->insert($id_field, $vc_course, $level, $status);
 				// Save Fields into database
@@ -231,9 +231,9 @@
 			$id_field			= (isset($_POST['id_field'])) ? trim($_POST['id_field']) :  false;
 			$vc_course			= (isset($_POST['vc_course'])) ? trim($_POST['vc_course']) :  false;
 			$level				= (isset($_POST['level'])) ? trim($_POST['level']) :  false;
-			$status				= (isset($_POST['status'])) ? trim($_POST['status']) :  0;
+			$status				= (isset($_POST['status'])) ? trim($_POST['status']) :  false;
 			// If data was sent
-			if (($id_course) && ($id_field) && ($vc_course) && ($level) && ($status)) {
+			if (($id_course !== false) && ($id_field !== false) && ($vc_course !== false) && ($level !== false) && ($status !== false)) {
 				// Insert Course into database
 				$res			= $RepCourse->update($id_course, $id_field, $vc_course, $level, $status);
 				// Save Fields into database

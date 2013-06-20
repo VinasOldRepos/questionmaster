@@ -24,7 +24,8 @@
 					$return		.= '<div class="return_row" key="'.$entries[$i]['id'].'">'.PHP_EOL;
 					$return		.= '	<div class="result_field result_id">'.$entries[$i]['id'].'</div>'.PHP_EOL;
 					$return		.= '	<div class="result_field result_status">'.$entries[$i]['vc_status'].'</div>'.PHP_EOL;
-					$return		.= '	<div class="result_field result_question">'.$entries[$i]['tx_question'].'</div>'.PHP_EOL;
+					$dots		= (strlen($entries[$i]['tx_question']) > 60) ? '...' : '';
+					$return		.= '	<div class="result_field result_question">'.substr(str_replace("\n", "", $entries[$i]['tx_question']), 0, 60).$dots.'</div>'.PHP_EOL;
 					$return		.= '	<div class="result_field result_answers">'.$entries[$i]['answers'].'</div>'.PHP_EOL;
 					$return		.= '</div><br />'.PHP_EOL;
 				}
@@ -61,7 +62,8 @@
 					$rows		.= '<div class="return_row" key="'.$entries[$i]['id'].'">'.PHP_EOL;
 					$rows		.= '	<div class="result_field result_id">'.$entries[$i]['id'].'</div>'.PHP_EOL;
 					$rows		.= '	<div class="result_field result_status">'.$entries[$i]['vc_status'].'</div>'.PHP_EOL;
-					$rows		.= '	<div class="result_field result_question">'.$entries[$i]['tx_question'].'</div>'.PHP_EOL;
+					$dots		= (strlen($entries[$i]['tx_question']) > 60) ? '...' : '';
+					$rows		.= '	<div class="result_field result_question">'.substr(str_replace("\n", "", $entries[$i]['tx_question']), 0, 60).$dots.'</div>'.PHP_EOL;
 					$rows		.= '	<div class="result_field result_answers">'.$entries[$i]['answers'].'</div>'.PHP_EOL;
 					$rows		.= '</div><br />'.PHP_EOL;
 				}

@@ -138,7 +138,7 @@
 			// Database Connection
 			$db						= $GLOBALS['db'];
 			// Validate sent information
-			if (($id_field) && ($vc_course) && ($level) && ($status)) {
+			if (($id_field !== false) && ($vc_course !== false) && ($level !== false) && ($status !== false)) {
 				// Prepare values
 				$values[]		= $id_field;
 				$values[]		= $level;
@@ -169,7 +169,7 @@
 			// Database Connection
 			$db					= $GLOBALS['db'];
 			// Validate sent information
-			if (($id_course) && ($id_field) && ($vc_course) && ($level) && ($status)) {
+			if (($id_course !== false) && ($id_field !== false) && ($vc_course !== false) && ($level !== false) && ($status !== false)) {
 				$table			= 'tb_course';
 				$fields[]		= 'id_field';
 				$fields[]		= 'int_level';
