@@ -76,7 +76,7 @@
 			@return format	- string/false
 		*/
 		public static function set($name = false, $value = false) {
-			if (($name) && ($value)) {
+			if (($name !== false) && ($value  !== false)) {
 				self::$data[$name]	= $value;
 			}
 		}

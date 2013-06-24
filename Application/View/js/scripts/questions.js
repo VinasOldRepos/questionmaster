@@ -408,17 +408,41 @@ $('document').ready(function() {
 		return false;
 	});
 
+	// What happens when user change time limit
+	$("#int_timelimit").live("keypress", function(e) {
+		if (e.keyCode == 13) {
+			$id_question			= $("#parent_id").val();
+			$int_timelimit			= $(this).val();
+			if ($int_timelimit) {
+				$.post('/questionmaster/Questions/updateTimeLimit', {
+					id_question:	$id_question,
+					int_timelimit:	$int_timelimit
+				}, function($data) {
+					$result			= $data.trim();
+					if ($result != 'ok') {
+						alert("Atention\n\nWe we're able to change the Time Limit.\n\nError: " + $result);
+					}
+					return false;
+				});
+				
+			}
+			return false;
+		}
+	});
+
 	// What happens when user submit new Question
 	$(".new_question").live("click", function() {
 		$courses		= $("#courses_arr").val();
 		$insert_type	= $("#insert_type").val();
 		$id_status		= $("#id_status").val();
+		$int_timelimit	= $("#int_timelimit").val();
 		$tx_question	= $("#tx_question").val().trim();
 		$tx_tutor		= $("#tx_tutor").val().trim();
-		if (($courses) && ($id_status) && ($tx_question) && ($tx_tutor)) {
+		if (($courses) && ($id_status) && ($int_timelimit) && ($tx_question) && ($tx_tutor)) {
 			$.post('/questionmaster/Questions/addQuestion', {
 				courses:		$courses,
 				id_status:		$id_status,
+				int_timelimit:	$int_timelimit,
 				tx_question:	$tx_question,
 				tx_tutor:		$tx_tutor
 			}, function($data) {

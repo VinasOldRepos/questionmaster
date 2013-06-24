@@ -228,8 +228,9 @@
 }
 
 .updt_answer {
-	float:		right;
-	margin-top:	50px;
+	float:		left;
+	margin-top:	10px;
+	margin-left:	35px;
 }
 
 .updt_answer:hover {
@@ -237,8 +238,9 @@
 }
 
 .delete_answer {
+	position:	absolute;
 	float:			right;
-	margin-left:	40px;
+	margin-left:	0px;
 	margin-top:		13px;
 }
 
@@ -247,8 +249,9 @@
 }
 
 .new_answer {
+	position:		absolute;
 	float: 			right;
-	margin-left:	20px;
+	margin-left:	480px;
 }
 
 .new_answer:hover {
@@ -268,4 +271,9 @@
 	float:			left;
 	margin-left:	10px;
 	margin-top:		-100px;
+}
+
+.time_limit {
+	float:		left;
+	margin-top:	20px;
 }

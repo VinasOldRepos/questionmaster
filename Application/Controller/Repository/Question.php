@@ -329,19 +329,21 @@
 		Insert Question into Database - insertQuestion($courses, $id_status, $tx_question, $tx_tutor)
 			@param array	- Corses' IDs
 			@param integer	- Status ID
+			@param integer	- Time limit
 			@param text		- Question's text
 			@param text		- Tutor's text
 			@return integer	- Question's ID
 		*/
-		public function insertQuestion($courses, $id_status, $tx_question, $tx_tutor) {
+		public function insertQuestion($courses, $id_status, $int_timelimit, $tx_question, $tx_tutor) {
 			// Initialize variables
 			$return				= false;
 			// Database Connection
 			$db					= $GLOBALS['db'];
 			// Validate sent information
-			if (($courses) && ($id_status) && ($tx_question) && ($tx_tutor)) {
+			if (($courses) && ($id_status)  && ($int_timelimit) && ($tx_question) && ($tx_tutor)) {
 				// Prepare values
 				$values[]		= $id_status;
+				$values[]		= $int_timelimit;
 				$values[]		= $tx_question;
 				$values[]		= $tx_tutor;
 				// Add Question to Database
@@ -449,6 +451,28 @@
 				$fields[]	= 'boo_correct';
 				$conditions	= "id = {$id_answer}";
 				$return		= $db->updateRow('tb_answer', $fields, $data, $conditions);
+			}
+			return $return;
+		}
+
+		/*
+		Update Answer Text - updateTimeLimit($id_question, $int_timelimit)
+			@param integer	- Question ID
+			@param integer	- time limit
+			@param boolean	- If answer is correct
+			@return boolean
+		*/
+		public function updateTimeLimit($id_question = false, $int_timelimit = false) {
+			// Initialize variables
+			$return			= false;
+			// Database Connection
+			$db				= $GLOBALS['db'];
+			// Validate sent information
+			if (($id_question !== false) && ($int_timelimit !== false)) {
+				$data[]		= $int_timelimit;
+				$fields[]	= 'int_timelimit';
+				$conditions	= "id = {$id_question}";
+				$return		= $db->updateRow('tb_question', $fields, $data, $conditions);
 			}
 			return $return;
 		}

@@ -16,6 +16,7 @@
 	// Framework Classes
 	use SaSeed\View;
 	use SaSeed\Session;
+	use SaSeed\General;
 
 	// Model Classes
 	use Application\Model\Menu;
@@ -277,6 +278,7 @@
 					}
 					View::set('id_question',	$question['id']);
 					View::set('question',		$question['tx_question']);
+					View::set('int_timelimit',	$question['int_timelimit']);
 					View::set('tutor',			$question['tx_tutor']);
 					View::set('pager',			$pager);
 					View::set('status',			$status);
@@ -324,7 +326,7 @@
 			$RepQuestion	= new RepQuestion();
 			// Initialize variables
 			$id_question	= (isset($_POST['id_question'])) ? trim($_POST['id_question']) : false;
-			$tx_question	= (isset($_POST['tx_question'])) ? trim($_POST['tx_question']) : false;
+			$tx_question	= (isset($_POST['tx_question'])) ? General::quotes(trim($_POST['tx_question'])) : false;
 			$return			= false;
 			// If data were sent
 			if (($id_question) && ($tx_question)) {
@@ -362,6 +364,28 @@
 		}
 
 		/*
+		Updates Question's time limit - updateTimeLimit()
+			@return format	- print
+		*/
+		public function updateTimeLimit() {
+			// Declare classes
+			$RepQuestion	= new RepQuestion();
+			// Initialize variables
+			$id_question	= (isset($_POST['id_question'])) ? trim($_POST['id_question']) : false;
+			$int_timelimit	= (isset($_POST['int_timelimit'])) ? trim($_POST['int_timelimit']) : false;
+			$return			= false;
+			// If data was sent
+			if (($id_question) && ($int_timelimit)) {
+				// Update Question
+				$RepQuestion->updateTimeLimit($id_question, $int_timelimit);
+				// Prepare return
+				$return		= 'ok';
+			}
+			// Return
+			echo $return;
+		}
+
+		/*
 		Updates Tutor text - updateTutor()
 			@return format	- print
 		*/
@@ -370,7 +394,7 @@
 			$RepQuestion	= new RepQuestion();
 			// Initialize variables
 			$id_question	= (isset($_POST['id_question'])) ? trim($_POST['id_question']) : false;
-			$tx_tutor		= (isset($_POST['tx_tutor'])) ? trim($_POST['tx_tutor']) : false;
+			$tx_tutor		= (isset($_POST['tx_tutor'])) ? General::quotes(trim($_POST['tx_tutor'])) : false;
 			$return			= false;
 			// If data were sent
 			if (($id_question) && ($tx_tutor)) {
@@ -454,13 +478,14 @@
 			$RepQuestion	= new RepQuestion();
 			// Initialize variables
 			$return			= 'nok';
-			$courses		= explode('|', (isset($_POST['courses'])) ? trim($_POST['courses']) :  false);
-			$id_status		= (isset($_POST['id_status'])) ? trim($_POST['id_status']) :  false;
-			$tx_question	= (isset($_POST['tx_question'])) ? trim($_POST['tx_question']) :  false;
-			$tx_tutor		= (isset($_POST['tx_tutor'])) ? trim($_POST['tx_tutor']) :  false;
+			$courses		= explode('|', (isset($_POST['courses'])) ? trim($_POST['courses']) : false);
+			$id_status		= (isset($_POST['id_status'])) ? trim($_POST['id_status']) : false;
+			$int_timelimit	= (isset($_POST['int_timelimit'])) ? trim($_POST['int_timelimit']) : false;
+			$tx_question	= (isset($_POST['tx_question'])) ? General::quotes(trim($_POST['tx_question'])) : false;
+			$tx_tutor		= (isset($_POST['tx_tutor'])) ? General::quotes(trim($_POST['tx_tutor'])) : false;
 			// If data was sent
-			if (($courses) && ($id_status) && ($tx_question) && ($tx_tutor)) {
-				$return		= $RepQuestion->insertQuestion($courses, $id_status, $tx_question, $tx_tutor);
+			if (($courses) && ($id_status) && ($int_timelimit) && ($tx_question) && ($tx_tutor)) {
+				$return		= $RepQuestion->insertQuestion($courses, $id_status, $int_timelimit, $tx_question, $tx_tutor);
 			}
 			// Print Return
 			echo $return;

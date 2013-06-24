@@ -26,9 +26,9 @@
 	// *********************** \\
 	//  Include Basic Classes
 	// *********************** \\
-	
 	require_once(APP_PATH.'SaSeed/Session.php');
-	
+	require_once(APP_PATH.'SaSeed/GeneralFunctions.php');
+
 	// Database Connection
 	if (DB_NAME) {
 		$db	= new Database();

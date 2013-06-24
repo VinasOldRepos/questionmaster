@@ -62,17 +62,20 @@
 						<a href="#" class="text_01" id="add_courses">(Add courses)</a -->
 					</div>
 				</div>
+				<div class="time_limit">
+					Time Limit:<br /><input type="text" name="int_timelimit" id="int_timelimit" maxlength="200" class="tiny_text_input" value="<?php echo $int_timelimit; ?>" />
+				</div>
 				<div class="add_question">
 					<div style="float: left;">
 						Add new answer: <input type="text" name="new_answer" id="new_answer" maxlength="200" class="thi_text_input" />
 					</div>
-					<div style="float: right;">
+					<div style="float: left; margin-left: 30px;">
 						<select name="correct" id="correct" class="tiny_text_input">
 							<option value="1">Correct</option>
 							<option value="0" selected="selected">Incorrect</option>
 						</select>
-						<div class="new_answer"><img src="/questionmaster/Application/View/img/bt_add.png" width="20" height="20" border="0" /></div>
 					</div>
+					<div class="new_answer"><img src="/questionmaster/Application/View/img/bt_add.png" width="20" height="20" border="0" /></div>
 				</div>
 				<div class="add_course">
 					<div style="float: left;">
