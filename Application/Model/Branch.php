@@ -7,7 +7,7 @@
 * Description: 		This is the Branch's model.										*
 *																					*
 * Creation Date:	09/05/2013														*
-* Version:			1.13.0509														*
+* Version:			1.13.0710														*
 * License:			http://www.opensource.org/licenses/bsd-license.php BSD			*
 *************************************************************************************/
 
