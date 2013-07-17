@@ -308,14 +308,14 @@ $('document').ready(function() {
 
 function reloadFieldList() {
 	document.body.style.cursor	= 'wait';
-	$key		= parent.$('#pager_pg_num').val();
-	$ordering	= parent.$('#ordering').val();
-	$offset		= parent.$('#offset').val();
-	$limit		= parent.$('#limit').val();
-	$direction	= parent.$('#direction').val();
-	$direction	= parent.$('#direction').val();
-	$str_search	= parent.$('#str_search').val();
-	$parent_id	= parent.$('#parent_id').val();
+	$key		= $('#pager_pg_num').val();
+	$ordering	= $('#ordering').val();
+	$offset		= $('#offset').val();
+	$limit		= $('#limit').val();
+	$direction	= $('#direction').val();
+	$direction	= $('#direction').val();
+	$str_search	= $('#str_search').val();
+	$parent_id	= $('#parent_id').val();
 	$actionurl	= actionURL();
 	if (($key) && ($ordering) && ($offset) && ($limit) && ($direction) && ($actionurl)) {
 		fetchResults($actionurl, $key, $ordering, $offset, $limit, $direction, $str_search, $parent_id);

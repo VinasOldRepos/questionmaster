@@ -82,7 +82,7 @@
 		public function jqueryFields($entries = false, $pager = false, $ordering = 'id', $direction = 'ASC') {
 			$return				= false;
 			$rows				= '';
-			if (($entries) && ($list) && ($pager)) {
+			if (($entries) && ($pager)) {
 				$tot_entries	= count($entries);
 				for ($i = 0; $i < $tot_entries; $i++) {
 					$rows		.= '<div class="details_return_row" key="'.$entries[$i]['id'].'">'.PHP_EOL;
