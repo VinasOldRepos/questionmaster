@@ -53,9 +53,9 @@
 			$return			= false;
 			$ordering		= $ordering;
 			// Query set up
-			$table			= 'tb_course AS c JOIN tb_field AS f ON (c.id_field = f.id) JOIN tb_branch AS b ON (f.id_branch = b.id)';
-			$select_what	= 'c.*, f.vc_field, b.id as id_branch, b.vc_branch';
-			$conditions		= "1";
+			$table			= 'tb_course AS c JOIN tb_field AS f ON (c.id_field = f.id) JOIN tb_branch AS b ON (f.id_branch = b.id) LEFT JOIN tb_question_course AS qc ON (c.id = qc.id_course)';
+			$select_what	= 'c.*, f.vc_field, b.id as id_branch, b.vc_branch, COUNT(qc.id) AS total_questions';
+			$conditions		= "1 GROUP BY c.id";
 			$return			= $dbFunctions->getPage($select_what, $table, $conditions, $max, $num_page, $ordering, $direction);
 			// Return
 			return $return;
