@@ -138,13 +138,14 @@
 					// Model status select
 					$status		= $ModCourse->listStatus($course['boo_active']);
 					// Prepare data to be sent
-					View::set('branches',	$branches);
-					View::set('fields',		$fields);
-					View::set('id_course',	$course['id']);
-					View::set('id_field',	$course['id_field']);
-					View::set('level',		$course['int_level']);
-					View::set('course',		$course['vc_course']);
-					View::set('status',		$status);
+					View::set('branches',		$branches);
+					View::set('fields',			$fields);
+					View::set('id_course',		$course['id']);
+					View::set('id_field',		$course['id_field']);
+					View::set('level',			$course['int_level']);
+					View::set('course',			$course['vc_course']);
+					View::set('tot_questions',	$course['total_questions']);
+					View::set('status',			$status);
 					// Render page
 					View::render('partial_courseDetails');
 				}

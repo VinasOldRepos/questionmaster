@@ -27,6 +27,7 @@
 					$return		.= '	<div class="result_field result_vc_field">'.$entries[$i]['vc_field'].'</div>'.PHP_EOL;
 					$return		.= '	<div class="result_field result_course">'.$entries[$i]['vc_course'].'</div>'.PHP_EOL;
 					$return		.= '	<div class="result_field result_level">'.$entries[$i]['int_level'].'</div>'.PHP_EOL;
+					$return		.= '	<div class="result_field result_totquestions">'.$entries[$i]['total_questions'].'</div>'.PHP_EOL;
 					if ($entries[$i]['boo_active'] == 1) {
 						$return	.= '	<div class="result_field result_active" key="0"><span class="active_label">Active</span></div>'.PHP_EOL;
 					} else {
@@ -75,6 +76,13 @@
 			} else {
 				$return	.= '	<div class="result_header_field result_level"  key="c.int_level" direction="ASC" style="text-align: center;">Level</div>'.PHP_EOL;
 			}
+			if (($ordering == 'total_questions') && ($direction == 'ASC')) {
+				$return	.= '	<div class="result_header_field result_totquestions"  key="total_questions" direction="DESC" style="text-align: center;"><img src="/questionmaster/Application/View/img/arrow_down_mini.gif" width="16" height="16" align="absmiddle" />Questions</div>'.PHP_EOL;
+			} else if (($ordering == 'total_questions') && ($direction == 'DESC')) {
+				$return	.= '	<div class="result_header_field result_totquestions"  key="total_questions" direction="ASC" style="text-align: center;"><img src="/questionmaster/Application/View/img/arrow_up_mini.gif" width="16" height="16" align="absmiddle" />Questions</div>'.PHP_EOL;
+			} else {
+				$return	.= '	<div class="result_header_field result_totquestions"  key="total_questions" direction="ASC" style="text-align: center;">Questions</div>'.PHP_EOL;
+			}
 			if (($ordering == 'c.boo_active') && ($direction == 'ASC')) {
 				$return	.= '	<div class="result_header_field result_active"  key="c.boo_active" direction="DESC" style="text-align: center;"><img src="/questionmaster/Application/View/img/arrow_down_mini.gif" width="16" height="16" align="absmiddle" />Status</div>'.PHP_EOL;
 			} else if (($ordering == 'c.boo_active') && ($direction == 'DESC')) {
@@ -98,6 +106,7 @@
 					$rows		.= '	<div class="result_field result_vc_field">'.$entries[$i]['vc_field'].'</div>'.PHP_EOL;
 					$rows		.= '	<div class="result_field result_course">'.$entries[$i]['vc_course'].'</div>'.PHP_EOL;
 					$rows		.= '	<div class="result_field result_level">'.$entries[$i]['int_level'].'</div>'.PHP_EOL;
+					$rows		.= '	<div class="result_field result_totquestions">'.$entries[$i]['total_questions'].'</div>'.PHP_EOL;
 					if ($entries[$i]['boo_active'] == 1) {
 						$rows	.= '	<div class="result_field result_active" key="0"><span class="active_label">Active</span></div>'.PHP_EOL;
 					} else {
