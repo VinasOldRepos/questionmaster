@@ -18,6 +18,11 @@ $('document').ready(function() {
 
 	// What happens when user clicks a main menu item
 	$(".menu .item_off").live("click", function() {
+		$key = $(this).attr('key');
+		if ($key) {
+			$(location).attr('href', '/questionmaster/'+$key+'/Search');
+		}
+		/*
 		$(".item_on").attr('class', 'item_off');
 		$(".item_on").css('background-color', '#032407');
 		$(".menu .item_off").css('background-color', '#032407');
@@ -28,6 +33,7 @@ $('document').ready(function() {
 			$(".menu .details").hide();
 			contentShow("#"+$controller);
 		}
+		*/
 		return false;
 	});
 
