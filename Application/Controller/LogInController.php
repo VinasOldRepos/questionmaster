@@ -52,7 +52,7 @@
 			$email			= (isset($_POST['email'])) ? trim($_POST['email']) : false;
 			$password		= (isset($_POST['password'])) ? trim($_POST['password']) : false;
 			// If data was sent
-			if (($email) && ($password)) {
+			if (($email !== false) && ($password !== false)) {
 				// Get user info from DB and check password
 				$user		= $RepLogIn->checkRightsLogin($email, $password);
 				// If user is found and password match
@@ -76,7 +76,8 @@
 			@return format	- boolean
 		*/
 		public static function checkLogin() {
-			return (Session::getVar('user')) ? true : false;
+			$user	= Session::getVar('user');
+			return ($user['rights']['boo_questionmaster']) ? true : false;
 		}
 
 		/*
