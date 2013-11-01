@@ -194,7 +194,7 @@
 			$id_profile		= (isset($_POST['id_profile'])) ? trim($_POST['id_profile']) : false;
 			$vc_user		= (isset($_POST['vc_user'])) ? trim($_POST['vc_user']) : false;
 			$vc_email		= (isset($_POST['vc_email'])) ? trim($_POST['vc_email']) : false;
-			$vc_password	= (isset($_POST['vc_password'])) ? trim($_POST['vc_password']) : false;
+			$vc_password	= (isset($_POST['vc_password'])) ? md5(trim($_POST['vc_password'])) : false;
 			$return			= false;
 			// If values were sent
 			if (($id_profile) && ($vc_user) && ($vc_email) && ($vc_password)) {
@@ -219,7 +219,7 @@
 			$id_profile		= (isset($_POST['id_profile'])) ? trim($_POST['id_profile']) : false;
 			$vc_user		= (isset($_POST['vc_user'])) ? trim($_POST['vc_user']) : false;
 			$vc_email		= (isset($_POST['vc_email'])) ? trim($_POST['vc_email']) : false;
-			$vc_password	= (isset($_POST['vc_password'])) ? trim($_POST['vc_password']) : false;
+			$vc_password	= ((isset($_POST['vc_password'])) && ($_POST['vc_password'] != '')) ? md5(trim($_POST['vc_password'])) : false;
 			$return			= false;
 			// If values were sent
 			if (($id_user) && ($id_profile) && ($vc_user) && ($vc_email)) {
