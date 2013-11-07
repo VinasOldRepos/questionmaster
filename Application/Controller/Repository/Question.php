@@ -334,13 +334,13 @@
 			@param text		- Tutor's text
 			@return integer	- Question's ID
 		*/
-		public function insertQuestion($courses, $id_status, $int_timelimit, $tx_question, $tx_tutor) {
+		public function insertQuestion($courses = false, $id_status = false, $int_timelimit = false, $tx_question = false, $tx_tutor = false) {
 			// Initialize variables
 			$return				= false;
 			// Database Connection
 			$db					= $GLOBALS['db'];
 			// Validate sent information
-			if (($courses) && ($id_status)  && ($int_timelimit) && ($tx_question) && ($tx_tutor)) {
+			if (($courses) && ($id_status)  && ($int_timelimit) && ($tx_question !== false) && ($tx_tutor !== false)) {
 				// Prepare values
 				$values[]		= $id_status;
 				$values[]		= $int_timelimit;
@@ -370,7 +370,7 @@
 			// Database Connection
 			$db					= $GLOBALS['db'];
 			// Validate sent information
-			if (($id_question) && ($vc_answer)) {
+			if (($id_question) && ($vc_answer !== false)) {
 				if ($boo_correct == 1) {
 					$db->updateRow('tb_answer', array('boo_correct'), array(0), 'id_question = '.$id_question);
 				}
@@ -396,7 +396,7 @@
 			// Database Connection
 			$db				= $GLOBALS['db'];
 			// Validate sent information
-			if (($id_question) && ($tx_question)) {
+			if (($id_question) && ($tx_question !== false)) {
 				$table		= 'tb_question';
 				$data[]		= $tx_question;
 				$fields[]	= 'tx_question';
@@ -440,7 +440,7 @@
 			// Database Connection
 			$db				= $GLOBALS['db'];
 			// Validate sent information
-			if (($id_answer) && ($id_question) && ($vc_answer)) {
+			if (($id_answer) && ($id_question) && ($vc_answer !== false)) {
 				if ($boo_correct == 1) {
 					$db->updateRow('tb_answer', array('boo_correct'), array(0), 'id_question = '.$id_question);
 				}
@@ -489,7 +489,7 @@
 			// Database Connection
 			$db				= $GLOBALS['db'];
 			// Validate sent information
-			if (($id_question) && ($tx_tutor)) {
+			if (($id_question) && ($tx_tutor !== false)) {
 				$table		= 'tb_question';
 				$data[]		= $tx_tutor;
 				$fields[]	= 'tx_tutor';

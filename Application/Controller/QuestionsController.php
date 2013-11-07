@@ -353,7 +353,7 @@
 			$boo_correct	= (isset($_POST['boo_correct'])) ? trim($_POST['boo_correct']) : 0;
 			$return			= false;
 			// If data was sent
-			if (($id_answer) && ($id_question) && ($vc_answer)) {
+			if (($id_answer) && ($id_question) && ($vc_answer !== false)) {
 				// Update Question
 				$RepQuestion->updateAnswer($id_answer, $id_question, $vc_answer, $boo_correct);
 				// Prepare return
@@ -484,7 +484,7 @@
 			$tx_question	= (isset($_POST['tx_question'])) ? General::quotes(trim($_POST['tx_question'])) : false;
 			$tx_tutor		= (isset($_POST['tx_tutor'])) ? General::quotes(trim($_POST['tx_tutor'])) : false;
 			// If data was sent
-			if (($courses) && ($id_status) && ($int_timelimit) && ($tx_question) && ($tx_tutor)) {
+			if (($courses) && ($id_status) && ($int_timelimit) && ($tx_question !== false) && ($tx_tutor !== false)) {
 				$return		= $RepQuestion->insertQuestion($courses, $id_status, $int_timelimit, $tx_question, $tx_tutor);
 			}
 			// Print Return
@@ -523,7 +523,7 @@
 			$vc_answer		= (isset($_POST['vc_answer'])) ? trim($_POST['vc_answer']) :  false;
 			$boo_correct	= (isset($_POST['boo_correct'])) ? trim($_POST['boo_correct']) :  0;
 			// If data was sent
-			if (($id_question) && ($vc_answer)) {
+			if (($id_question) && ($vc_answer !== false)) {
 				$return		= $RepQuestion->insertAnswer($id_question, $vc_answer, $boo_correct);
 				// Prepare return
 				if ($return) {
