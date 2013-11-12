@@ -102,8 +102,10 @@
 			$return			= false;
 			$ordering		= $ordering;
 			// Query set up
-			$table			= 'tb_question AS q JOIN tb_question_status AS s ON (q.id_status = s.id) LEFT JOIN tb_answer AS a ON (q.id = a.id_question)';
-			$select_what	= 'q.id, q.id_status, s.vc_status, q.tx_question, COUNT(a.id) AS answers';
+			//$table			= 'tb_question AS q JOIN tb_question_status AS s ON (q.id_status = s.id) LEFT JOIN tb_answer AS a ON (q.id = a.id_question)';
+			$table			= 'tb_question AS q JOIN tb_question_status AS s ON (q.id_status = s.id)';
+			//$select_what	= 'q.id, q.id_status, s.vc_status, q.tx_question, COUNT(a.id) AS answers';
+			$select_what	= 'q.id, q.id_status, s.vc_status, q.tx_question';
 			$conditions		= "1 GROUP BY q.id";
 			$return			= $dbFunctions->getPage($select_what, $table, $conditions, $max, $num_page, $ordering, $direction);
 			// Return

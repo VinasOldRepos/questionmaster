@@ -26,7 +26,7 @@
 					$return		.= '	<div class="result_field result_status">'.$entries[$i]['vc_status'].'</div>'.PHP_EOL;
 					$dots		= (strlen($entries[$i]['tx_question']) > 60) ? '...' : '';
 					$return		.= '	<div class="result_field result_question">'.substr(str_replace("\n", "", $entries[$i]['tx_question']), 0, 60).$dots.'</div>'.PHP_EOL;
-					$return		.= '	<div class="result_field result_answers">'.$entries[$i]['answers'].'</div>'.PHP_EOL;
+					//$return		.= '	<div class="result_field result_answers">'.$entries[$i]['answers'].'</div>'.PHP_EOL;
 					$return		.= '</div><br />'.PHP_EOL;
 				}
 			}
@@ -64,7 +64,7 @@
 					$rows		.= '	<div class="result_field result_status">'.$entries[$i]['vc_status'].'</div>'.PHP_EOL;
 					$dots		= (strlen($entries[$i]['tx_question']) > 60) ? '...' : '';
 					$rows		.= '	<div class="result_field result_question">'.substr(str_replace("\n", "", $entries[$i]['tx_question']), 0, 60).$dots.'</div>'.PHP_EOL;
-					$rows		.= '	<div class="result_field result_answers">'.$entries[$i]['answers'].'</div>'.PHP_EOL;
+					//$rows		.= '	<div class="result_field result_answers">'.$entries[$i]['answers'].'</div>'.PHP_EOL;
 					$rows		.= '</div><br />'.PHP_EOL;
 				}
 				$return			.= '<div class="navigation_box" id="up_nav_box">'.PHP_EOL;
@@ -233,13 +233,13 @@
 			} else {
 				$return	.= '	<div class="result_header_field result_question"  key="q.tx_question" direction="ASC" style="text-align: center;">Question</div>'.PHP_EOL;
 			}
-			if (($ordering == 'answers') && ($direction == 'ASC')) {
+			/* if (($ordering == 'answers') && ($direction == 'ASC')) {
 				$return	.= '	<div class="result_header_field result_answers"  key="answers" direction="DESC" style="text-align: center;"><img src="/questionmaster/Application/View/img/arrow_down_mini.gif" width="16" height="16" align="absmiddle" />Answers</div>'.PHP_EOL;
 			} else if (($ordering == 'answers') && ($direction == 'DESC')) {
 				$return	.= '	<div class="result_header_field result_answers"  key="answers" direction="ASC" style="text-align: center;"><img src="/questionmaster/Application/View/img/arrow_up_mini.gif" width="16" height="16" align="absmiddle" />Answers</div>'.PHP_EOL;
 			} else {
 				$return	.= '	<div class="result_header_field result_answers"  key="answers" direction="ASC" style="text-align: center;">Answers</div>'.PHP_EOL;
-			}
+			} */
 			$return	.= '</div><br />'.PHP_EOL;
 			return $return;
 		}
